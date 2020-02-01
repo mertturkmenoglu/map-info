@@ -1,0 +1,31 @@
+{
+  "name": "map-info",
+  "version": "1.0.0",
+  "description": "An interactive map project shows you information about countries",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mertturkmenoglu/map-info.git"
+  },
+  "keywords": [
+    "map",
+    "js",
+    "api",
+    "node"
+  ],
+  "author": "Mert Turkmenoglu",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mertturkmenoglu/map-info/issues"
+  },
+  "homepage": "https://github.com/mertturkmenoglu/map-info#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
