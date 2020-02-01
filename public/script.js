@@ -8,12 +8,12 @@ window.onload = () => {
 
     m.on('click', async e => {
         const { lat, lng } = e.latlng;
-        const response = await fetch('/countryCode/' + lat.toFixed(2) + ',' + lng.toFixed(2));
+        const response = await fetch('/countryName/' + lat.toFixed(2) + ',' + lng.toFixed(2));
         const json = await response.json();
 
-        if (json.status) {
-            const countryCode = json.countryCode;
-            L.popup().setLatLng(e.latlng).setContent('Clicked to: ' + countryCode).openOn(m);
+        if (json) {
+            const { countryCode, countryName } = json;
+            L.popup().setLatLng(e.latlng).setContent('This country is ' + countryName).openOn(m);
         }
     });
 };
