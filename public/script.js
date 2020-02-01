@@ -6,5 +6,16 @@ window.onload = () => {
     const tiles = L.tileLayer(tileUrl, { attr });
     tiles.addTo(m);
 
-    m.on('click', e => console.log(`Clicked to: ${e.latlng}`));
+    m.on('click', async e => {
+        const { lat, lng } = e.latlng;
+        const response = await fetch('/countryCode/' + lat.toFixed(2) + ',' + lng.toFixed(2));
+        const json = await response.json();
+
+        if (json.status) {
+            const countryCode = json.countryCode;
+            L.popup().setLatLng(e.latlng).setContent('Clicked to: ' + countryCode).openOn(m);
+        }
+    });
 };
+
+
